@@ -1,40 +1,32 @@
 package stack;
 
-import java.util.Stack;
-
 /**
  * @author weiye
  * @date 2021/2/1 12:21
  */
 public class StackTest {
     public static void main(String[] args) {
-//        Stack<Integer> stack = new ArrayStack<>();
-//        stack.push(1);
-//        System.out.println(stack);
-//        stack.push(2);
-//        System.out.println(stack);
-//        stack.push(3);
-//        System.out.println(stack);
-//        stack.pop();
-//        System.out.println(stack);
+        int count = 1000000;
 
+        Stack<Integer> arrayStack = new ArrayStack<>();
+        double time1 = testStack(arrayStack, count);
+        System.out.println("arrayStack: " + time1);
+
+        Stack<Integer> linkedStack = new LinkListStack<>();
+        double time2 = testStack(linkedStack, count);
+        System.out.println("linkedStack: " + time2);
     }
 
-    class Solution {
-        public boolean isValid(String s) {
-            Stack<Character> stack = new Stack<>();
-            for (char c : s.toCharArray()) {
-                if (c == '(') {
-                    stack.push(')');
-                } else if (c == '[') {
-                    stack.push(']');
-                } else if (c == '{') {
-                    stack.push('}');
-                } else if (stack.isEmpty() || c != stack.pop()) {
-                    return false;
-                }
-            }
-            return stack.isEmpty();
+    private static double testStack(Stack<Integer> stack, int count){
+        long startTime = System.nanoTime();
+        for (int i = 0; i < count; i++) {
+            stack.push(i);
         }
+        for (int i = 0; i < count; i++) {
+            stack.pop();
+        }
+
+        long endTime = System.nanoTime();
+        return (endTime - startTime) / 1000000000.0;
     }
 }

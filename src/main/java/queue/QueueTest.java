@@ -22,10 +22,13 @@ public class QueueTest {
     public static void main(String[] args) {
         Queue<Integer> loopQueue = new LoopQueue<>();
         Queue<Integer> arrayQueue = new ArrayQueue<>();
+        Queue<Integer> linkedQueue = new LinkedListQueue<>();
         int count = 100000;
         double loopTime = testQueue(loopQueue, count);
         double arrayTime = testQueue(arrayQueue, count);
+        double linkedTime = testQueue(linkedQueue, count);
         System.out.println("loopTime: " + loopTime);
         System.out.println("arrayTime: " + arrayTime);
+        System.out.println("linkedTime: " + linkedTime);
     }
 }
