@@ -21,5 +21,9 @@ public enum SortType {
     /**
      * 插入排序3
      */
-    INSERT_SORT3;
+    INSERT_SORT3,
+    /**
+     * 归并排序
+     */
+    MERGE_SORT;
 }

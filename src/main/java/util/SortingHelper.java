@@ -2,6 +2,7 @@ package util;
 
 import entity.SortType;
 import sort.InsertSort;
+import sort.MergeSort;
 import sort.SelectSort;
 
 /**
@@ -61,6 +62,8 @@ public class SortingHelper {
             InsertSort.sort2(arr);
         } else if (sortType.equals(SortType.INSERT_SORT3)) {
             InsertSort.sort3(arr);
+        } else if (sortType.equals(SortType.MERGE_SORT)) {
+            MergeSort.sort(arr);
         }
         long endTime = System.nanoTime();
         double duration = (endTime - startTime) / 1000000000.0;
