@@ -25,5 +25,9 @@ public enum SortType {
     /**
      * 归并排序
      */
-    MERGE_SORT;
+    MERGE_SORT,
+    /**
+     * 快速排序
+     */
+    QUICK_SORT;
 }

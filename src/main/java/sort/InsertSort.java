@@ -59,6 +59,21 @@ public class InsertSort {
         }
     }
 
+    public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
+        for (int i = l; i <= r; i++) {
+            E tmp = arr[i];
+            int j;
+            for (j = i; j > 0; j--) {
+                if (tmp.compareTo(arr[j - 1]) >= 0) {
+                    break;
+                }
+                arr[j] = arr[j - 1];
+
+            }
+            arr[j] = tmp;
+        }
+    }
+
     /**
      * 插入排序 从小到大
      * 从后往前排序

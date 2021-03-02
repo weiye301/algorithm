@@ -3,6 +3,7 @@ package util;
 import entity.SortType;
 import sort.InsertSort;
 import sort.MergeSort;
+import sort.QuickSort;
 import sort.SelectSort;
 
 /**
@@ -64,6 +65,8 @@ public class SortingHelper {
             InsertSort.sort3(arr);
         } else if (sortType.equals(SortType.MERGE_SORT)) {
             MergeSort.sort(arr);
+        } else if (sortType.equals(SortType.QUICK_SORT)) {
+            QuickSort.sort(arr);
         }
         long endTime = System.nanoTime();
         double duration = (endTime - startTime) / 1000000000.0;
