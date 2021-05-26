@@ -1,10 +1,7 @@
 package util;
 
 import entity.SortType;
-import sort.InsertSort;
-import sort.MergeSort;
-import sort.QuickSort;
-import sort.SelectSort;
+import sort.*;
 
 /**
  * @author weiye
@@ -64,9 +61,9 @@ public class SortingHelper {
         } else if (sortType.equals(SortType.INSERT_SORT3)) {
             InsertSort.sort3(arr);
         } else if (sortType.equals(SortType.MERGE_SORT)) {
-            MergeSort.sort(arr);
+            MergeSortTest.sort(arr);
         } else if (sortType.equals(SortType.QUICK_SORT)) {
-            QuickSort.sort(arr);
+            QuickSort2.sort(arr);
         }
         long endTime = System.nanoTime();
         double duration = (endTime - startTime) / 1000000000.0;
