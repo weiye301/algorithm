@@ -64,6 +64,8 @@ public class SortingHelper {
             MergeSortTest.sort(arr);
         } else if (sortType.equals(SortType.QUICK_SORT)) {
             QuickSort2.sort(arr);
+        } else if (sortType.equals(SortType.MAX_HEAP_SORT)) {
+            HeapSort.sort2(arr);
         }
         long endTime = System.nanoTime();
         double duration = (endTime - startTime) / 1000000000.0;

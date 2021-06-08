@@ -29,5 +29,9 @@ public enum SortType {
     /**
      * 快速排序
      */
-    QUICK_SORT;
+    QUICK_SORT,
+    /**
+     * 最大堆排序
+     */
+    MAX_HEAP_SORT;
 }

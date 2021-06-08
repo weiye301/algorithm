@@ -1,6 +1,8 @@
 package array;
 
 
+import org.omg.CORBA.Object;
+
 /**
  * @author weiye
  * @date 2021/1/28 11:05
@@ -31,6 +33,14 @@ public class MyArray<E> {
     public MyArray(int capacity) {
         this.data = (E[]) new Object[capacity];
         this.size = 0;
+    }
+
+    public MyArray(E[] arr) {
+        data = (E[]) new Object[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            data[i] = arr[i];
+        }
+        size = arr.length;
     }
 
     /**
@@ -216,6 +226,15 @@ public class MyArray<E> {
         if (index != -1) {
             remove(index);
         }
+    }
+
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size) {
+            throw new IndexOutOfBoundsException("index out of bounds.");
+        }
+        E tmp = data[i];
+        data[i] = data[j];
+        data[j] = tmp;
     }
 
     @Override
